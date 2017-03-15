@@ -10,5 +10,5 @@ module.exports = (robot) ->
   robot.hear /帰りたい/i, (msg) ->
     msg.send msg.random ["どうした。文句があるなら、自分でプレーしろ！", "人は完璧を求める。しかし、完璧だと思った時から全てがやり直しになる", "じゃんけんの必勝法は、強く握り締めたグーを出すこと", "苦しいか？ 笑え！！"]
 
-  robot.hear /帰りたい/i, (msg) ->
+  robot.hear /test/i, (msg) ->
     msg.send "@raoka0000"
