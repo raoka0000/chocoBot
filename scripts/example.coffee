@@ -4,7 +4,6 @@
 #   hiraoka
 
 
-_ = require('hubot:new-channel-bot')
 
 module.exports = (robot) ->
   robot.hear /疲れた/i, (msg) ->
