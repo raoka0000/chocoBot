@@ -23,4 +23,4 @@ module.exports = (robot) ->
     return unless msg.item.message.permalink
     user = robot.adapter.client.getUserByID msg.user
     text = ":star: @#{user.name} added star #{msg.item.message.permalink}"
-    robot.send {room: 'stars'}, text
+    robot.send {room: 'command-test'}, text
