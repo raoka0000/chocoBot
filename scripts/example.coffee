@@ -12,3 +12,8 @@ module.exports = (robot) ->
 
   robot.hear /test/i, (msg) ->
     msg.send "@raoka0000"
+
+  robot.adapter.client?.on? 'raw_message', (msg) ->
+    return unless msg.type is 'channel_created'
+    text = ":star: @#{msg.channel.name} "
+    robot.send {room: 'command-test'}, text
