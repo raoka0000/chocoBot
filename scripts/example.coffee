@@ -11,7 +11,7 @@ module.exports = (robot) ->
     msg.send msg.random ["どうした。文句があるなら、自分でプレーしろ！", "人は完璧を求める。しかし、完璧だと思った時から全てがやり直しになる", "じゃんけんの必勝法は、強く握り締めたグーを出すこと", "苦しいか？ 笑え！！"]
 
   robot.hear /test/i, (msg) ->
-    msg.send "@raoka0000"
+    msg.send "テスト中だよ"
 
   robot.adapter.client?.on? 'raw_message', (msg) ->
     return unless msg.type is 'channel_created'
@@ -23,4 +23,4 @@ module.exports = (robot) ->
     return unless msg.item.message.permalink
     user = robot.adapter.client.getUserByID msg.user
     text = ":star: @#{user.name} added star #{msg.item.message.permalink}"
-    robot.send {room: 'command-test'}, text
+    msg.send text
