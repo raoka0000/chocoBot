@@ -1,7 +1,6 @@
 # Description:
-#   Slackで新しいチャンネルができたら通知するやつ
-# Author:
-#   hiraoka
+#   新しいチャンネルの完成を教えてくれるbot
+#
 
 module.exports = (robot) ->
   robot.hear /疲れた/i, (msg) ->
