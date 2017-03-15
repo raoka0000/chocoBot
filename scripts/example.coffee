@@ -4,6 +4,7 @@
 #   hiraoka
 
 
+_ = require('hubot:new-channel-bot')
 
 module.exports = (robot) ->
   robot.hear /疲れた/i, (msg) ->
@@ -21,11 +22,5 @@ module.exports = (robot) ->
     robot.send {room: 'command-test'}, text
 
   robot.adapter.client?.on? 'raw_message', (msg) ->
-    return unless msg.type is 'star_added'
-    return unless msg.item.message.permalink
-    user = robot.adapter.client.getUserByID msg.user
-    text = ":star: @#{user.name} added star #{msg.item.message.permalink}"
+    return unless msg.type is 'message'
     msg.send text
-
-  robot.adapter.client?.on? 'hello', (msg) ->
-    msg.send "おはよう"
