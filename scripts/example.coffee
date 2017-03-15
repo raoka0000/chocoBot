@@ -22,4 +22,5 @@ module.exports = (robot) ->
     robot.send {room: 'command-test'}, text
 
   robot.adapter.client?.on? 'raw_message', (msg) ->
+    return unless msg.type is 'message'
     msg.send "成功"
