@@ -15,8 +15,3 @@ module.exports = (robot) ->
     idname = robot.adapter.client.rtm.dataStore.getUserByName('raoka0000')
     msg.send "テスト中だよ #{idname}"
 
-  robot.adapter.client?.rtm?.on? 'raw_message', (msg) ->
-    message = JSON.parse msg
-    return unless message.type is 'message'
-    msg.send "成功"
-
