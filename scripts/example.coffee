@@ -12,6 +12,6 @@ module.exports = (robot) ->
     msg.send msg.random ["どうした。文句があるなら、自分でプレーしろ！", "人は完璧を求める。しかし、完璧だと思った時から全てがやり直しになる", "じゃんけんの必勝法は、強く握り締めたグーを出すこと", "苦しいか？ 笑え！！"]
 
   robot.hear /test/i, (msg) ->
-    idname = robot.adapter.client.rtm.dataStore.getUserByName('raoka0000')
+    idname = robot.adapter.client.rtm.dataStore.getUserByName('raoka0000').id
     msg.send "テスト中だよ #{idname}"
 
