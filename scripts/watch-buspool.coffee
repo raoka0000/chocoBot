@@ -9,7 +9,7 @@ module.exports = (robot) ->
       url = "https://post.kyoto-su.ac.jp/upload/webcam/buspool-bc#{i}.jpg"
       data =
         attachments: [
-          author_name: "京産バスプール"
+          author_name: "バスプール"
           image_url: url
         ]
       msg.send data
