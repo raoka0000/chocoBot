@@ -4,7 +4,7 @@
 #   raoka0000
 
 module.exports = (robot) ->
-  robot.adapter.client.rtm.on 'raw_message', (msg) ->
+  robot.adapter.client?.rtm?.on? 'raw_message', (msg) ->
     message = JSON.parse msg
     return unless message.type is 'message'
     msg.send "成功"
