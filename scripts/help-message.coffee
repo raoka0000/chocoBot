@@ -6,7 +6,12 @@
 
 module.exports = (robot) ->
   robot.respond /(help|-h|-help|ヘルプ|詳細)/i, (msg) ->
-    text1 = "バスの混み具合を確認する\n chocobot bus"
+    text = """
+     バスの混み具合を確認する
+     chocobot bus
+     可愛いチョコボを出す
+     chocobot AA
+    """
     data =
       attachments: [
         text: text1
