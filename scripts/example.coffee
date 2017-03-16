@@ -14,7 +14,7 @@ module.exports = (robot) ->
   robot.hear /test/i, (msg) ->
     idname = robot.adapter.client.rtm.dataStore.getUserByName('raoka0000').id
     mRoom = msg.envelope.room
-    robot.send {room: mRoom}, "テスト中だよ #{idname}"
+    robot.send {room: mRoom}, "テスト中だよ #{idname} | #{mRoom}"
 
   robot.adapter.client.rtm.on 'raw_message', (msg) ->
     message = JSON.parse msg
