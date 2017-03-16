@@ -18,6 +18,6 @@ module.exports = (robot) ->
 
   robot.adapter.client.rtm.on 'raw_message', (msg) ->
     message = JSON.parse msg
-    return unless message.type is 'hello'
+    return unless message.type is 'star_added'
     robot.send {room: "C4J4ZUXUH"}, "成功"
 
