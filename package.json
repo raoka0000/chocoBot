@@ -5,6 +5,7 @@
   "author": "raoka0000 <raoka0000@gmail.com>",
   "description": "A simple helpful robot for your Company",
   "dependencies": {
+    "cheerio-httpcli": "^0.6.11",
     "hubot": "^2.19.0",
     "hubot-browserstack": "^0.1.6",
     "hubot-diagnostics": "0.0.1",
