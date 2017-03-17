@@ -21,9 +21,10 @@ module.exports = (robot) ->
           "呼んだクエ？",
           "ナイスだクエ！",
           "リアクションありがとうクエ！",
-          "クエックエックエ~",
-          "クエックエックエ~チョコボール",
-          "-チョコボ-"
+          "クエックエックエ〜",
+          "クエックエックエ〜チョコボール",
+          "_チョコボ_",
+          "素晴らしいクポ！"
         ]
         text = arr[Math.floor(Math.random() * (arr.length + 1))]
         robot.send {room: message.item.channel}, text
