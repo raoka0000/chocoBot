@@ -5,15 +5,16 @@
 
 
 module.exports = (robot) ->
-  robot.respond /(help|h|ヘルプ|詳細)/i, (msg) ->
+  robot.respond /(-help|h|-h|ヘルプ|詳細)/i, (msg) ->
     text = """
      バスの混み具合を確認する
-     chocobot bus or バス
+     　chocobot bus or バス
      可愛いチョコボを出す
-     chocobot AA or aa
+     　chocobot AA or aa
      時間割を出す
-     chocobot tt or timetable or 時間割
-
+     　chocobot tt or timetable or 時間割
+     　オプション
+          -test [テスト期間中の時間割にする]
     """
     data =
       attachments: [
