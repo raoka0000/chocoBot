@@ -92,7 +92,7 @@ module.exports = function(robot) {
     if (message.type !== 'reaction_added') return;
     switch (message.reaction) {
       case 'gotiusa_tino':
-        if (!checker.run(message.user, message.ts, 5)) return;
+        if (!checker.run(message.user, message.ts, 5)) return;//連投禁止機能
         data = {
           attachments: [
             {
@@ -107,7 +107,7 @@ module.exports = function(robot) {
         }, data);
 
       case 'serval-chan':
-        if (!checker.run(message.user, message.ts, 5)) return;
+        if (!checker.run(message.user, message.ts, 5)) return;//連投禁止機能
         data = {
           username: "サーバルちゃん",
           icon_emoji: ":serval-chan:",
@@ -115,19 +115,21 @@ module.exports = function(robot) {
         };
         client = robot.adapter.client;
         arr = [
-            "すごーい",
+            "すごーい！！",
             "フレンズのみんなー！元気ー？",
             "すごーい！あなたは素敵なフレンズなんだね！",
-            "おもしろーい！",
-            "わーい！",
+            "おもしろーい！！",
+            "わーい！！",
             "美味しいものを食べてこその人生だよ！",
-            "わーい！すごーい！"
+            "わーい！すごーい！",
+            "すごーい！！なにこれー？",
+            "わーい！おもしろーい！！"
             ];
         text = arr[Math.floor(Math.random() * (arr.length))];
         return client.web.chat.postMessage(message.item.channel, text, data);
 
       case 'chocobot':
-        if (!checker.run(message.user, message.ts, 5)) return;
+        if (!checker.run(message.user, message.ts, 5)) return;//連投禁止機能
         arr = [
             "呼んだクエ？",
             "ナイスだクエ！",
@@ -135,6 +137,7 @@ module.exports = function(robot) {
             "クエックエックエ〜",
             "クエックエックエ〜チョコボール",
             "_チョコボ_",
+            "~チョコボ~",
             "素晴らしいクポ！"
             ];
         text = arr[Math.floor(Math.random() * (arr.length))];
