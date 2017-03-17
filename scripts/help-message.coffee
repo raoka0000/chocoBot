@@ -14,7 +14,7 @@ module.exports = (robot) ->
      　`(今日 or 明日 or 明後日)の天気`
      *電車の遅延を確認する*
          `cbot train kyoto`
-          <http://transit.yahoo.co.jp/traininfo/detail/267/0|ここ>から直接読み取ってます。ここだけで不足であれば教えてください。
+          <http://transit.yahoo.co.jp/traininfo/detail/267/0|ここ>から直接読み取ってます。不足であれば教えてください。
      *時間割を出す*
      　`cbot (tt or timetable or 時間割)`
      　オプション
