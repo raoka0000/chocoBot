@@ -5,7 +5,7 @@
 
 
 module.exports = (robot) ->
-  robot.respond /(-help|h|-h|ヘルプ|詳細)/i, (msg) ->
+  robot.respond /(-help|-h|ヘルプ|詳細)/i, (msg) ->
     text = """
      バスの混み具合を確認する
      　chocobot bus or バス
