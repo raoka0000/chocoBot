@@ -8,9 +8,12 @@ module.exports = (robot) ->
   robot.respond /(help|-h|-help|ヘルプ|詳細)/i, (msg) ->
     text = """
      バスの混み具合を確認する
-     chocobot bus
+     chocobot bus or バス
      可愛いチョコボを出す
-     chocobot AA
+     chocobot AA or aa
+     時間割を出す
+     chocobot tt or timetable or 時間割
+
     """
     data =
       attachments: [
