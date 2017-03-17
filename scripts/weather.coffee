@@ -1,15 +1,9 @@
 module.exports = (robot) ->
   robot.hear /((.*))の天気/i, (msg) ->
-   switch msg.match[1]
-      when '今日'
-        day = 0
-      when '明日'
-        day = 1
-      when '明後日'
-        day = 2
-      else
-        day = -1
-        break
+    day = -1
+    day =  0 unless msg.match[1].indexOf("今日") == -1
+    day =  1 unless msg.match[1].indexOf("明日") == -1
+    day =  2 unless msg.match[1].indexOf("明後日") == -1
     request = msg.http('http://weather.livedoor.com/forecast/webservice/json/v1?city=260010')
     .get()
     request (err, res, body) ->
