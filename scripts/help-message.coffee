@@ -7,7 +7,7 @@
 module.exports = (robot) ->
   robot.respond /(-help|-h|ヘルプ|詳細)/i, (msg) ->
     text = """
-    _チョコボットとDMで会話する際には"chot"この単語を消してください_
+    _チョコボットとDMで会話する際には"cbot"この単語を消してください_
      *バスの混み具合を確認する*
      　`cbot (bus or バス)`
      *天気を聞く*
