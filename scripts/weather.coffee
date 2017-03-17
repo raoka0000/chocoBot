@@ -1,5 +1,5 @@
 module.exports = (robot) ->
-  robot.respond /((.*))の天気(.*)/i, (msg) ->
+  robot.hear /((.*))の天気(.*)/i, (msg) ->
    switch msg.match[1]
       when '今日'
         day = 0
@@ -15,4 +15,4 @@ module.exports = (robot) ->
     request (err, res, body) ->
       json = JSON.parse body
       if day == -1 then forecast = 'わからないクエ' else forecast = "#{msg.match[1]}の天気[京都]\n" + json['forecasts'][day]['telop']
-      msg.reply forecast
+      msg.send forecast
