@@ -20,7 +20,7 @@ module.exports = (robot) ->
         robot.send {room: message.item.channel}, data
       when 'serval-chan'
         data =
-          username: "serval-chan"
+          username: "サーバルちゃん"
           icon_emoji: ":serval-chan:"
           as_user: false
         client = robot.adapter.client
