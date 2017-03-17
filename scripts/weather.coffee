@@ -1,3 +1,8 @@
+# Description:
+#   天気を知らせるbot
+# Author:
+#   raoka0000
+
 module.exports = (robot) ->
   robot.hear /((.*))の天気/i, (msg) ->
     day = -1
