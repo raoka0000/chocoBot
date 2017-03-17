@@ -25,7 +25,7 @@ module.exports = (robot) ->
           as_user: false
         client = robot.adapter.client
         arr = [
-          "すごーい",
+          "すごーい！！",
           "フレンズのみんなー！元気ー？",
           "すごーい！あなたは素敵なフレンズなんだね！",
           "おもしろーい！",
