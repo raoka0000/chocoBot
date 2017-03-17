@@ -1,5 +1,5 @@
 module.exports = (robot) ->
-  robot.hear /((.*))の天気(.*)/i, (msg) ->
+  robot.hear /((.*))の天気/i, (msg) ->
    switch msg.match[1]
       when '今日'
         day = 0
