@@ -20,15 +20,22 @@ module.exports = (robot) ->
         robot.send {room: message.item.channel}, data
       when 'serval-chan'
         data =
-          attachments: [
-            author_name: "チノ"
-            image_url: "http://otiai10.com/chino.gif"
-            color: "ece0f8"
-          ]
+          username: "サーバルちゃん"
+          icon_emoji: ":serval-chan:"
+          as_user: false
         client = robot.adapter.client
-        client.web.chat.postMessage(message.item.channel, 'テストだよ！', data)
+        arr = [
+          "すごーい",
+          "フレンズのみんなー！元気ー？",
+          "すごーい！あなたは素敵なフレンズなんだね！",
+          "おもしろーい！",
+          "わーい！",
+          "美味しいものを食べてこその人生だよ！",
+          "わーい！すごーい！"
+        ]
+        text = arr[Math.floor(Math.random() * (arr.length + 1))]
+        client.web.chat.postMessage(message.item.channel, text, data)
       when 'chocobot'
-        return if message.is_starred is true
         arr = [
           "呼んだクエ？",
           "ナイスだクエ！",
