@@ -1,5 +1,5 @@
 // Author:
-//   gammaaex 
+//   gammaaex
 
 var ConsecutiveChecker = (function(){
 
@@ -89,15 +89,10 @@ module.exports = function(robot) {
         text;
 
     message = JSON.parse(msg);
-    if (message.type !== 'reaction_added') {
-      return;
-    }
-    if (!checker.run(message.user, message.ts, 5)) {
-      return;
-    }
-
+    if (message.type !== 'reaction_added') return;
     switch (message.reaction) {
       case 'gotiusa_tino':
+        if (!checker.run(message.user, message.ts, 5)) return;
         data = {
           attachments: [
             {
@@ -112,6 +107,7 @@ module.exports = function(robot) {
         }, data);
 
       case 'serval-chan':
+        if (!checker.run(message.user, message.ts, 5)) return;
         data = {
           username: "サーバルちゃん",
           icon_emoji: ":serval-chan:",
@@ -131,6 +127,7 @@ module.exports = function(robot) {
         return client.web.chat.postMessage(message.item.channel, text, data);
 
       case 'chocobot':
+        if (!checker.run(message.user, message.ts, 5)) return;
         arr = [
             "呼んだクエ？",
             "ナイスだクエ！",
