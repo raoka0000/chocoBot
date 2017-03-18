@@ -10,6 +10,8 @@ module.exports = (robot) ->
     _チョコボットとDMで会話する際には"cbot"この単語を消してください_
      *バスの混み具合を確認する*
      　`cbot (bus or バス)`
+     　_ios版ではキャッシュが原因で最新の画像が送られない可能性があります。_
+     　_解決するには 設定 -> slack -> Reset Cache on Next Launch_　
      *天気を聞く*
      　`(今日 or 明日 or 明後日)の天気`
      *電車の遅延を確認する*
