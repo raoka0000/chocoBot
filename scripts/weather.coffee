@@ -21,7 +21,7 @@ module.exports = (robot) ->
       else
         forecast = """
           #{day_label[day]}の天気[京都]
-          #{json['forecasts'][day]['telop']}<http://weather.livedoor.com/area/forecast/2610000|[詳細]>
+          #{json['forecasts'][day]['telop']}<http://weather.livedoor.com/area/forecast/2610100|[詳細]>
           """
       data =
         attachments: [
