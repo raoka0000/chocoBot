@@ -4,13 +4,13 @@
 #   raoka0000
 
 module.exports = (robot) ->
-  robot.respond /(lottery|lot|くじ|randam|ランダム|抽選|) (.+)/i, (msg) ->
+  robot.respond /(lottery|lot|くじ|randam|ランダム|抽選)(.*)/i, (msg) ->
+    option = msg.match[2].trim()
     room = msg.envelope.room
     channel = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById(room)
     if channel.getType() is "dm"
       msg.send "DMではできないクエ"
       return
-    option = msg.match[2]
     if option == ""
       loop #do-whileの代わり
         target = msg.random channel.members
