@@ -12,6 +12,10 @@ module.exports = (robot) ->
      　`cbot (bus or バス)`
      　_ios版ではキャッシュが原因で最新の画像が送られない可能性があります。_
      　_解決するには 設定 -> slack -> Reset Cache on Next Launch_　
+     *メンバーの中でくじ引きを行う*
+      `cbot (lottery or lot or くじ or randam or ランダム or 抽選)`
+      オプション
+        `-list` [メンバー全員にランダムで順番をつける]
      *天気を聞く*
      　`(今日 or 明日 or 明後日)の天気`
      *電車の遅延を確認する*
