@@ -8,7 +8,7 @@ MailListener = require "mail-listener2"
 moment = require("moment")
 
 config =
-  rooms: (process.env.HUBOT_MAIL_LISTENER_ROOMS or 'C4LEAQHPW').split(',')
+  rooms: (process.env.HUBOT_MAIL_LISTENER_ROOMS or 'C4LFH6ACA').split(',')
   username: process.env.HUBOT_MAIL_NOTIFIER_USERNAME
   password: process.env.HUBOT_MAIL_NOTIFIER_PASSWORD
   host: process.env.HUBOT_MAIL_NOTIFIER_HOST
