@@ -19,7 +19,9 @@
     "hubot-rules": "^0.1.1",
     "hubot-scripts": "^2.17.2",
     "hubot-shipit": "^0.2.0",
-    "hubot-slack": "^4.3.3"
+    "hubot-slack": "^4.3.3",
+    "mail-listener2": "^0.3.1",
+    "moment": "^2.18.0"
   },
   "engines": {
     "node": "0.10.x"
