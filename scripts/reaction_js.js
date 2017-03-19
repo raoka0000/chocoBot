@@ -110,7 +110,7 @@ module.exports = function(robot) {
         if (!checker.run(message.user, message.ts, 5)) return;
         data = {
           username: "サーバルちゃん",
-          icon_emoji: ":serval-chan:",
+          icon_url: "https://i.gyazo.com/9103ac7da2589974a82efa9356dc0d04.png",
           as_user: false
         };
         client = robot.adapter.client;

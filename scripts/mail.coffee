@@ -77,8 +77,8 @@ module.exports = (robot) ->
         text: mail.text
         footer: "#{date.format('LLLL')}"
       ]
-      username: "Gmailくん"
-      icon_emoji: ":gmail:"
+      username: "Gmail"
+      icon_url: "https://cdn4.iconfinder.com/data/icons/free-colorful-icons/128/gmail.png"
       as_user: false
     for room in config.rooms
       robot.adapter.client.web.chat.postMessage(room, '', options)
