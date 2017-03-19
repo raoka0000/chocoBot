@@ -25,10 +25,15 @@ module.exports = (robot) ->
           """
       data =
         attachments: [
-          color: "81daf5"
-          text : forecast
-          thumb_url: json['forecasts'][day]['image']['url']
-          footer: "<#{json['copyright']['link']}|#{json['copyright']['title']}>"
+          {
+            color: "81daf5"
+            text : forecast
+            image_url: json['forecasts'][day]['image']['url']
+          },
+          {
+            text: ""
+            footer: "<#{json['copyright']['link']}|#{json['copyright']['title']}>"
+          }
         ]
       #console.log json
       msg.send data
