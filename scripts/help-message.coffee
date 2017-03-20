@@ -27,6 +27,8 @@ module.exports = (robot) ->
           `-test` [テスト期間中の時間割にする]
      *可愛いチョコボを出す*
      　`cbot (AA or aa)`
+     *botのコメントを削除したいとき*
+      そのコメントに :trash: (trash)<-リアクションをつけることで削除することができます。
     """
     data =
       attachments: [
