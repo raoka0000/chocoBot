@@ -30,13 +30,27 @@ module.exports = (robot) ->
       target_name = robot.adapter.client.rtm.dataStore.getUserById(target).real_name
     msg.send "当選者は#{target_name}だクエ"
 
+#TODO_あとで手直しする
   robot.respond /(order|ord|リスト|順番)(.*)/i, (msg) ->
+    option = msg.match[2].trim()
     room = msg.envelope.room
-    channel = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById(room)
-    shuffle channel.members
+    if option != ""
+      names = option.replace(/\@/g, "").split(" ")
+      users = []
+      for name in names
+        user = robot.adapter.client.rtm.dataStore.getUserByName(name)
+        if user?
+          users.push user.id
+        else
+          msg.send "予期せぬ名前があるクエ　-> #{name}"
+          return
+    else
+      channel = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById(room)
+      users = channel.members
+    shuffle users
     n = 0
     names = []
-    for target in channel.members
+    for target in users
       continue if target is robot.adapter.self.id
       name = robot.adapter.client.rtm.dataStore.getUserById(target).real_name
       names.push "#{++n}: #{name}"
