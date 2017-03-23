@@ -11,10 +11,23 @@ module.exports = (robot) ->
     if channel.getType() is "dm"
       msg.send "DMではできないクエ"
       return
-    loop #do-whileの代わり
-      target = msg.random channel.members
-      break if target != robot.adapter.self.id
-    target_name = robot.adapter.client.rtm.dataStore.getUserById(target).real_name
+    if option != ""
+      names = option.replace(/\@/g, "").split(" ")
+      users = []
+      for name in names
+        user = robot.adapter.client.rtm.dataStore.getUserByName(name)
+        if user?
+          users.push user
+        else
+          msg.send "予期せぬ名前があるクエ　-> #{name}"
+          return
+      target = msg.random users
+      target_name = target.real_name
+    else
+      loop #do-whileの代わり
+        target = msg.random channel.members
+        break if target != robot.adapter.self.id
+      target_name = robot.adapter.client.rtm.dataStore.getUserById(target).real_name
     msg.send "当選者は#{target_name}だクエ"
 
   robot.respond /(order|ord|リスト|順番)(.*)/i, (msg) ->
