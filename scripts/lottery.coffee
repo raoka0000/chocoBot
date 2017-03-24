@@ -8,54 +8,45 @@ module.exports = (robot) ->
     option = msg.match[2].trim()
     room = msg.envelope.room
     channel = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById(room)
-    if channel.getType() is "dm"
-      msg.send "DMではできないクエ"
-      return
     if option != ""
       names = option.replace(/\@/g, "").split(" ")
-      users = []
+      targets = []
       for name in names
         user = robot.adapter.client.rtm.dataStore.getUserByName(name)
-        if user?
-          users.push user
-        else
-          msg.send "予期せぬ名前があるクエ　-> #{name}"
-          return
-      target = msg.random users
-      target_name = target.real_name
+        if user? then targets.push user.real_name else targets.push name
+      target_name = msg.random targets
     else
+      if channel.getType() is "dm"
+        msg.send "DMではできないクエ"
+        return
       loop #do-whileの代わり
         target = msg.random channel.members
         break if target != robot.adapter.self.id
       target_name = robot.adapter.client.rtm.dataStore.getUserById(target).real_name
-    msg.send "当選者は#{target_name}だクエ"
+    msg.send "結果は#{target_name}だクエ"
 
 #TODO_あとで手直しする
   robot.respond /(order|ord|リスト|順番)(.*)/i, (msg) ->
     option = msg.match[2].trim()
     room = msg.envelope.room
+    channel = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById(room)
     if option != ""
       names = option.replace(/\@/g, "").split(" ")
-      users = []
+      targets = []
       for name in names
         user = robot.adapter.client.rtm.dataStore.getUserByName(name)
-        if user?
-          users.push user.id
-        else
-          msg.send "予期せぬ名前があるクエ　-> #{name}"
-          return
+        if user? then targets.push user.real_name else targets.push name
     else
-      channel = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById(room)
-      users = channel.members
-    shuffle users
+      if channel.getType() is "dm"
+        msg.send "DMではできないクエ"
+        return
+      targets = for menber in channel.members
+        continue if menber == robot.adapter.self.id
+        robot.adapter.client.rtm.dataStore.getUserById(menber).real_name
+    shuffle targets
     n = 0
-    names = []
-    for target in users
-      continue if target is robot.adapter.self.id
-      name = robot.adapter.client.rtm.dataStore.getUserById(target).real_name
-      names.push "#{++n}: #{name}"
+    names = ("#{++n}: #{target}" for target in targets)
     msg.send "#{names.join("\n")}"
-
 
 #配列をシャッフル
 shuffle = (array) ->
