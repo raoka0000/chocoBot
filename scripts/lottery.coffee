@@ -14,7 +14,6 @@ module.exports = (robot) ->
       for name in names
         user = robot.adapter.client.rtm.dataStore.getUserByName(name)
         if user? then targets.push user.real_name else targets.push name
-      console.log targets
       target_name = msg.random targets
     else
       if channel.getType() is "dm"
