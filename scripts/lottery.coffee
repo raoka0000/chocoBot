@@ -4,7 +4,7 @@
 #   raoka0000
 
 module.exports = (robot) ->
-  robot.respond /(lottery|lot|くじ|抽選|test)(.*)/i, (msg) ->
+  robot.respond /(lottery|lot|くじ|抽選)(.*)/i, (msg) ->
     option = msg.match[2].trim()
     room = msg.envelope.room
     channel = robot.adapter.client.rtm.dataStore.getChannelGroupOrDMById(room)
