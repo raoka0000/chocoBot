@@ -5,7 +5,7 @@
 #   raoka0000
 
 module.exports = (robot) ->
-  robot.hear /((.*))天気/i, (msg) ->
+  robot.respond /((.*))天気/i, (msg) ->
     day = -1
     day =  0 unless msg.match[1].indexOf("今日") == -1
     day =  1 unless msg.match[1].indexOf("明日") == -1
