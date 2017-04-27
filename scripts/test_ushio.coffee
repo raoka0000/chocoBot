@@ -1,9 +1,9 @@
 # Description:
 #   AAを表示するbot
 # Author:
-#   raoka0000
+#   munonasalu
 
 module.exports = (robot) ->
   robot.respond /(hiroto)/i, (msg) ->
-    text = "こんばんわんこそば"
+    text = "Welcome to ようこそ ジャパリパーク！"
     msg.send text
