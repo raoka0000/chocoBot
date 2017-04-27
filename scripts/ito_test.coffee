@@ -1,7 +1,7 @@
 # Description:
 #   AAを表示するbot
 # Author:
-#   raoka0000
+#   itonorimitsu
 
 module.exports = (robot) ->
   robot.respond /(ito)/i, (msg) ->
