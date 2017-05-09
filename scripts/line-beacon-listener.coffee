@@ -1,3 +1,6 @@
+config =
+  baseUrl: process.env.HUBOT_HEROKU_KEEPALIVE_URL ? 'http://localhost:8080'
+
 module.exports = (robot) ->
 
   robot.router.post "/line-becon", (req, res) ->
