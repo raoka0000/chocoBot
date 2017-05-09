@@ -1,6 +1,5 @@
 module.exports = (robot) ->
 
-  robot.router.post "/line-becon", (msg) ->
-    message = JSON.parse msg
-    robot.send {room: "C4LEAQHPW"}, message
-    res.end()
+  robot.router.post "/line-becon", (req, res) ->
+    robot.send {room: "C4LEAQHPW"}, "ビーコンに反応あり"
+    res.end ""
