@@ -1,5 +1,4 @@
 module.exports = (robot) ->
-
   robot.router.post "/line-becon", (req, res) ->
     if not req.body
       res.end ""
@@ -8,5 +7,5 @@ module.exports = (robot) ->
     unless data.events?
       res.end ""
       return
-    robot.send {room: "C4LEAQHPW"}, "ビーコンに反応あり 反応の種類#{data.events[0].beacon.type}"
+    robot.send {room: "C5AUJGJJE"}, "ビーコンに反応あり 反応の種類#{data.events[0].beacon.type}"
     res.end ""
