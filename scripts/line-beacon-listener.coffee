@@ -1,4 +1,5 @@
 module.exports = (robot) ->
 
   robot.router.post "/line-becon", (req, res) ->
-    robot.send {room: "C4LEAQHPW"}, "aaa"
+    robot.send {room: "C4LEAQHPW"}, message
+    res.end ""
