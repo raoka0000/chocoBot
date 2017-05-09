@@ -5,9 +5,6 @@ module.exports = (robot) ->
       res.end ""
       return
 
-    room_name = req.body.room
-    message = req.body.message
-    console.log  "test"
-    console.log  req
+    message = JSON.parse req
     robot.send {room: "C4LEAQHPW"}, message
     res.end ""
