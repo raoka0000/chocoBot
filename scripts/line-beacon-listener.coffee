@@ -7,5 +7,5 @@ module.exports = (robot) ->
     unless data.events?
       res.end ""
       return
-    robot.send {room: "C5AUJGJJE"}, "ビーコンに反応あり 反応の種類#{data.events[0].beacon.type}"
+    robot.send {room: process.env.ROOM_BOX_NOTIFICATION}, "ビーコンに反応あり 反応の種類#{data.events[0].beacon.type}"
     res.end ""
