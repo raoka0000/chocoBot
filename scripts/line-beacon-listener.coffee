@@ -4,12 +4,13 @@ module.exports = (robot) ->
       res.end ""
       return
     data = if req.body.payload? then JSON.parse req.body.payload else req.body
+    robot.logger.info data
     unless data.events?
       res.end ""
       return
     unless data.events[0].beacon?
       res.end ""
       return
-    robot.logger.info data
+    robot.logger.info data.events[0].beacon
     robot.send {room: process.env.ROOM_BOX_NOTIFICATION}, "ビーコンに反応あり 反応の種類#{data.events[0].beacon.type}"
     res.end ""
