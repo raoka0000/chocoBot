@@ -123,7 +123,8 @@ module.exports = function(robot) {
             "美味しいものを食べてこその人生だよ！",
             "わーい！すごーい！",
             "すごーい！！なにこれー？",
-            "わーい！おもしろーい！！"
+            "わーい！おもしろーい！！",
+            "食べないよ！！"
             ];
         text = arr[Math.floor(Math.random() * (arr.length))];
         return client.web.chat.postMessage(message.item.channel, text, data);
