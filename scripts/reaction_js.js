@@ -139,6 +139,7 @@ module.exports = function(robot) {
             "_チョコボ_",
             "~チョコボ~",
             "素晴らしいクポ！",
+            "アイスティでいいかな"
             ];
         text = arr[Math.floor(Math.random() * (arr.length))];
         return robot.send({
