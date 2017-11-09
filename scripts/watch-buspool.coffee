@@ -5,7 +5,7 @@
 
 module.exports = (robot) ->
   robot.respond /(bus|バス)/i, (msg) ->
-    url = ("https://post.kyoto-su.ac.jp/upload/webcam/buspool-bc#{i}.jpg" for i in [1..3])
+    url = ("https://jweb.kyoto-su.ac.jp/upload/webcam/buspool-bc#{i}.jpg" for i in [1..3])
     data =
       attachments: [
         {
