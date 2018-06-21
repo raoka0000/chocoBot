@@ -7,7 +7,7 @@ module.exports = (robot) ->
   robot.respond /(aa|AA)/i, (msg) ->
     text = """
     　　　　　　　　　　　_
-    　　　　　　　　／"'￣フ／)　　　　　　　 、
+    　　　　　　　　／"'￣フ／ )　　　　　　　 、
     　　　　　　　,/ ,--、 ￣､__フ　　　　 ／/
     　　　　　　 ,ヘｌ⌒ﾉ 　　＞　　　　,／　/＿
     　　　　　　( ＿l_"_ニ_　く＿　 ／）　／　／
